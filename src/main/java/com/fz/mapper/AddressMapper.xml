@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fz.mapper.AddressMapper">
+    <resultMap id="abc" type="address">
+        <id column="a_id" property="id"/>
+        <result column="a_ads" property="name"/>
+        <result column="a_phone" property="phone"/>
+    </resultMap>
+
+   <select id="querybyId" parameterType="int" resultMap="abc">
+       select * from address where a_id = #{id}
+   </select>
+</mapper>
